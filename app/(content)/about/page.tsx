@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
-import MyPicture from '@/public/images/myPictures.jpg'
+import MyPicture from '@/public/images/pict.jpg'
 import ButtonLink from '@/components/ui/button-link'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
@@ -28,7 +28,7 @@ export default function About() {
                     {/* Image Section */}
                     <div className=" w-fit overflow-visible mx-auto">
                         <Image priority={true}
-                            className="relative z-10 h-60 w-45 rounded-lg brightness-80 duration-300 hover:brightness-100 md:h-100 md:w-80"
+                            className="relative z-10 w-50 rounded-full brightness-80 duration-300 hover:brightness-100 md:w-80"
                             src={MyPicture}
                             alt="My Photo"
                         />
