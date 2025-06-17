@@ -9,7 +9,6 @@ import SkillsGridOne from "@/components/layouts/partials/skills-one-layout";
 import SkillsGridTwo from "@/components/layouts/partials/skills-two-layout";
 import CertificateCard from "@/components/ui/certificate-card";
 import { cn } from "@/lib/utils";
-import { DotPattern } from "@/components/magicui/dot-pattern";
 
 
 export default function Skills() {

@@ -7,6 +7,7 @@ import NavLink from "./ui/nav-link";
 import NavLinkMobile from "./ui/nav-link-mobile";
 import { useActiveSection } from "@/hooks/use-active-session";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AppNavbar() {
 
@@ -26,9 +27,9 @@ export default function AppNavbar() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <div className="shrink-0">
-                            <img
+                            <Image
                                 className="size-8"
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                                src="#"
                                 alt="Your Company"
                             />
                         </div>
