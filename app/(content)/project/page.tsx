@@ -1,12 +1,24 @@
+'use client';
 import React from 'react';
 import Card from "@/components/ui/project-card";
 import { get } from '@/server/projects';
+import { useEffect, useState } from 'react';
 
 
-export default async function Project() {
-    const data = await get();
+
+export default function Project() {
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        get()
+            .then(setProjects)
+            .catch(err => console.error(err));
+    }, []);
+
+    const res = projects;
 
     return (
+
         <div
             id="project"
             className="relative bg-transparent px-4 py-10 sm:px-6 sm:py-12 lg:py-8 lg:px-2 lg:min-h-[750px]"
@@ -22,8 +34,8 @@ export default async function Project() {
 
             <div className="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-8 max-w-7xl text-black dark:text-gray-300">
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
-                    {data && data.length > 0 ? (
-                        data.map((project) => (
+                    {res && res.length > 0 ? (
+                        res.map((project: any) => (
                             <Card
                                 key={project.id}
                                 image={project.project_image}
@@ -39,6 +51,10 @@ export default async function Project() {
                     ) : (
                         <p className='text-black italic dark:text-gray-500'>No projects found.</p>
                     )}
+
+                    {/* <div
+                        className="absolute w-60 h-60 right-7 top-20 bg-pink-950 dark:bg-pink-600 opacity-20 dark:opacity-10 blur-xl rounded-full z-0">
+                    </div> */}
                 </div>
             </div>
         </div>
