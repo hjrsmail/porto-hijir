@@ -1,21 +1,19 @@
 'use client';
-import React from 'react';
-import Card from "@/components/ui/project-card";
-import { get } from '@/server/projects';
-import { useEffect, useState } from 'react';
 
+import React, { useEffect, useState } from 'react';
+import Card from '@/components/ui/project-card';
+import { Project, get } from '@/server/projects';
 
-
-export default function Project() {
-    const [projects, setProjects] = useState([]);
+export default function ProjectPage() {
+    const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
         get()
             .then(setProjects)
-            .catch(err => console.error(err));
+            .catch((err) => console.error(err));
     }, []);
 
-    const res = projects;
+
 
     return (
 
@@ -34,8 +32,8 @@ export default function Project() {
 
             <div className="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-8 max-w-7xl text-black dark:text-gray-300">
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
-                    {res && res.length > 0 ? (
-                        res.map((project: any) => (
+                    {projects && projects.length > 0 ? (
+                        projects.map((project: any) => (
                             <Card
                                 key={project.id}
                                 image={project.project_image}

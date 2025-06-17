@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import GithubWhiteIcon from "../icons/github-white-icon";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";

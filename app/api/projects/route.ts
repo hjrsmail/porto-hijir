@@ -10,10 +10,7 @@ export async function GET() {
   });
 
   if (!res.ok) {
-    return NextResponse.json(
-      { error: "Gagal mengambil data" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Gagal fetch" }, { status: 500 });
   }
 
   const json = await res.json();
