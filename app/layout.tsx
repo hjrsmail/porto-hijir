@@ -11,6 +11,7 @@ const fontMerriweather = Merriweather({
   variable: "--font-merriweather",
   weight: "400",
   subsets: ["latin"],
+  preload: true,
 });
 
 // export async function generateMetadata() {
