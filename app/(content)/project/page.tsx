@@ -39,10 +39,6 @@ export default async function Project() {
                     ) : (
                         <p className='text-black italic dark:text-gray-500'>No projects found.</p>
                     )}
-
-                    {/* <div
-                        className="absolute w-60 h-60 right-7 top-20 bg-pink-950 dark:bg-pink-600 opacity-20 dark:opacity-10 blur-xl rounded-full z-0">
-                    </div> */}
                 </div>
             </div>
         </div>
