@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 {description.length > 25 ? description.slice(0, 25) + '...' : description}
             </p> */}
             <p className=" text-xs font-medium inline-flex gap-2 items-center">
-                <a href="#_" className="mr-1 underline">{author}</a>
+                <a href="#_" className="mr-1">{author}</a>
                 · <span className="mx-1">{date}</span>
                 ·
                 {url && (
