@@ -11,10 +11,19 @@ export interface Project {
   author: string;
 }
 
-export const get = async (): Promise<Project[]> => {
-    const data = await fetch (`${process.env.APP_URL}/projects`);
-    const json = await data.json();
+export const get = async () => {
+  const res = await fetch(`${process.env.APP_URL}/projects`, {
+    headers: {
+      "X-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
+      Accept: "application/json",
+    },
+    cache: "no-store",
+  });
 
-    return json.data;
+  if (!res.ok) {
+    throw new Error("Gagal mengambil data project");
+  }
 
+  const json = await res.json();
+  return json.data;
 };
