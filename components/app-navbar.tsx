@@ -27,11 +27,11 @@ export default function AppNavbar() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <div className="shrink-0">
-                            <Image
+                            {/* <Image
                                 className="size-8"
                                 src="#"
                                 alt="Your Company"
-                            />
+                            /> */}
                         </div>
                     </div>
 
