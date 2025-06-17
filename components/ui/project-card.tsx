@@ -2,57 +2,71 @@ import React from "react";
 import Image from "next/image";
 import GithubWhiteIcon from "../icons/github-white-icon";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { Project } from "@/types";
 
-
-interface ProjectCardProps {
-    image: string;
-    title: string;
-    description: string;
-    author: string;
-    date: string;
-    url?: string;
-    github?: string;
+interface Props {
+    project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-    image, title, description, author, date, url, github
-}) => {
+const ProjectCard: React.FC<Props> = ({ project }) => {
     return (
-        <div className="flex flex-col space-y-3 z-10">
-            <a href="#_" className="block transition-all duration-300 ease-in-out hover:scale-105">
+        <article className="flex flex-col space-y-3 z-10">
+            <div className="transition-all duration-300 ease-in-out hover:scale-105">
                 <Image
-                    priority={true}
-                    className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 brightness-70 hover:brightness-100"
-                    src={image}
-                    alt={title}
+                    priority
+                    src={project.image}
+                    alt={project.title}
                     width={500}
-                    height={500}
+                    height={300}
+                    className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 brightness-70 hover:brightness-100"
                 />
-            </a>
+            </div>
+
             <h2 className="text-lg font-bold sm:text-lg md:text-xl bg-darkk/50 rounded-md py-1">
-                <a href="#_">{title}</a>
+                {project.title}
             </h2>
-            {/* <p className="text-sm">
-                {description.length > 25 ? description.slice(0, 25) + '...' : description}
-            </p> */}
-            <p className=" text-xs font-medium inline-flex gap-2 items-center">
-                <a href="#_" className="mr-1">{author}</a>
-                · <span className="mx-1">{date}</span>
-                ·
-                {url && (
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                        <ArrowUpRightIcon className="size-5 mr-1" />
-                    </a>
+
+            {/* Tampilkan deskripsi jika diperlukan */}
+            {/* <p className="text-sm text-gray-600 dark:text-gray-400">
+        {description.length > 80 ? description.slice(0, 80) + "..." : description}
+      </p> */}
+
+            <p className="text-xs font-medium inline-flex flex-wrap items-center gap-1 text-gray-700 dark:text-gray-300">
+                <span>{project.author}</span>
+                <span>·</span>
+                <span>{project.date}</span>
+
+                {project.url && (
+                    <>
+                        <span>·</span>
+                        <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Project URL"
+                            className="inline-flex items-center"
+                        >
+                            <ArrowUpRightIcon className="w-5 h-5" />
+                        </a>
+                    </>
                 )}
-                <span className="mr-1"> · </span>
-                {github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer">
-                        <GithubWhiteIcon className="w-6 h-6" color="fill-gray-800 dark:fill-white" />
-                    </a>
+
+                {project.github && (
+                    <>
+                        <span>·</span>
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Repository"
+                            className="inline-flex items-center"
+                        >
+                            <GithubWhiteIcon className="w-6 h-6 fill-gray-800 dark:fill-white" />
+                        </a>
+                    </>
                 )}
             </p>
-
-        </div>
+        </article>
     );
 };
 
