@@ -4,7 +4,7 @@ import React from 'react'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
-import MyPicture from '@/public/images/myPictures.jpg'
+import MyPicture from '@/public/images/pict.jpg'
 import CodePictures from '@/public/images/code.png'
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import { AnimatedSpan, Terminal, TypingAnimation } from "@/components/magicui/terminal";
@@ -58,7 +58,7 @@ export default function Hero() {
             
             {/* Text */}
             <div
-                className="duration-000 flex max-w-3xl flex-col items-center pt-20 transition-all ease-out md:ml-6 md:items-start md:pt-0 lg:col-span-2">
+                className="duration-000 flex max-w-4xl flex-col items-center pt-20 transition-all ease-out md:ml-6 md:items-start md:pt-0 lg:col-span-2">
                 <h1 className="text-3xl text-gray-900 sm:text-5xl md:text-6xl dark:text-gray-300">
                     <strong ref={strongRef} className="invisible ">
                         Hijir Ismail
@@ -136,20 +136,18 @@ export default function Hero() {
                         </AnimatedSpan>
                     </Terminal>
                 </div>
-
             </div>
 
             {/* Gambar */}
             <div
                 id="myPict"
-                className="pict relative mx-auto scale-110 justify-center pt-20 transition-all duration-500 ease-out md:mr-6 md:items-end md:pt-1"
+                className="flex mx-auto scale-110 justify-center pt-20 transition-all duration-500 ease-out md:items-center md:pt-1"
             >
-                {/* <div className="custom:block absolute -right-25 -bottom-25 z-0 hidden h-70 w-70 rounded-full border-none bg-orange-600 opacity-10 blur-xl duration-500 dark:bg-white"></div> */}
                 <Image priority={true}
                     src={MyPicture}
                     placeholder="empty"
                     alt="myphoto"
-                    className="h-60 w-45 rounded-lg brightness-80 duration-400 hover:brightness-100 md:h-100 md:w-80"
+                    className="rounded-full brightness-80 duration-400 hover:brightness-100 w-50 md:w-80"
                 />
             </div>
         </div>
