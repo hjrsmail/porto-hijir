@@ -16,7 +16,6 @@ export async function GET() {
     );
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 600));
   const json = await res.json();
 
   const projects = json.data.map((item: any) => ({
