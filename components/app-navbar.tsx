@@ -25,11 +25,13 @@ export default function AppNavbar() {
             <div className="mx-auto max-w-screen-3xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
-                    <div className="flex items-center">
-                        <div className="shrink-0">
+                    <div className="items-center hidden md:block">
+                        <div className="shrink-0 ">
                             {/* <Image
+                                width={0}
+                                height={0}
                                 className="size-8"
-                                src="#"
+                                src=""
                                 alt="Your Company"
                             /> */}
                         </div>
