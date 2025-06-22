@@ -8,6 +8,7 @@ import AppLayout from "@/components/layouts/app-layout";
 
 export const metadata: Metadata = {
   title: "Portfolio - Hijir Ismail",
+  description: "Portofolio Hijir Ismail yang dibangun dengan menggunakan Frontend NextJS dan backend dara Laravel dan datanya diambil dengan menggunakan API Restful",
 };
 
 export default function Home() {
