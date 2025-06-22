@@ -13,7 +13,8 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         <article className="flex flex-col space-y-3 z-10">
             <div className="transition-all duration-300 ease-in-out hover:scale-105">
                 <Image
-                    priority
+                    // priority={true}
+                    loading="lazy"
                     src={project.image}
                     alt={project.title}
                     width={500}
