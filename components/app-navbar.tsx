@@ -38,7 +38,7 @@ export default function AppNavbar() {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:block justify-self-start">
+                    <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4 bg-white dark:bg-white/30 px-6 py-1 rounded-xl border border-gray-200">
                             {sectionIds.map(id => (
                                 <NavLink key={id} targetId={id} activeId={activeId}>
