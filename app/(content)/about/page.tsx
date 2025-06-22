@@ -24,7 +24,7 @@ export default function About() {
 
             {/* Content */}
             <div className="my-2 w-full text-black md:my-6 dark:text-gray-300">
-                <div className="md:grid md:grid-cols-1 lg:grid-cols-4">
+                <div className="md:grid md:grid-cols-1 lg:grid-cols-4 lg:gap-x-6 lg:px-6">
                     {/* Image Section */}
                     <div className=" w-fit overflow-visible mx-auto">
                         <Image priority={true}
@@ -100,7 +100,7 @@ export default function About() {
                                                     />
                                                 </svg>
                                             </span>
-                                            <h5 className="custom-mini:text-xs text-md font-semibold md:text-xl">Education</h5>
+                                            <h1 className="custom-mini:text-xs text-md font-semibold md:text-xl">Education</h1>
                                         </div>
                                         <ul className="relative space-y-6 border-l border-gray-300 text-start">
                                             <li className="relative">
@@ -118,7 +118,7 @@ export default function About() {
                                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full p-2 text-blue-500 md:bg-gray-900">
                                                 <BriefcaseIcon className="size-4 md:size-6" />
                                             </span>
-                                            <h5 className="custom-mini:text-xs text-md font-semibold md:text-xl">Experience</h5>
+                                            <h1 className="custom-mini:text-xs text-md font-semibold md:text-xl">Experience</h1>
                                         </div>
                                         <ul className="relative space-y-6 border-l border-gray-300 text-start">
                                             <li className="relative">
