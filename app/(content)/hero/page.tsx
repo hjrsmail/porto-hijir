@@ -59,7 +59,7 @@ export default function Hero() {
             {/* Text */}
             <div
                 className="duration-000 flex max-w-4xl flex-col items-center pt-20 transition-all ease-out md:ml-6 md:items-start md:pt-0 lg:col-span-2">
-                <h1 className="text-3xl text-gray-900 sm:text-5xl md:text-6xl dark:text-gray-300">
+                <h1 className="text-3xl text-gray-900 sm:text-5xl lg:text-6xl dark:text-gray-300">
                     <strong ref={strongRef} className="invisible ">
                         Hijir Ismail
                     </strong>
@@ -77,7 +77,7 @@ export default function Hero() {
 
                 <div className="flst inline-items mt-3 flex  items-center gap-3 text-base text-pretty text-gray-700 sm:text-2xl/relaxed md:gap-5 dark:text-gray-200">
                     <CodeBracketIcon className='size-5 text-blue-500 hover:text-white md:size-8' />
-                    <p className="from-blue-400 to-purple-500 bg-clip-text text-black duration-100 hover:bg-gradient-to-r hover:text-transparent dark:text-gray-300">
+                    <p className="text-lg md:text-xl  from-blue-400 to-purple-500 bg-clip-text text-black duration-100 hover:bg-gradient-to-r hover:text-transparent dark:text-gray-300">
                         Fullstack Developer
                     </p>
                 </div>
