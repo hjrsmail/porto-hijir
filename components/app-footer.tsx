@@ -35,7 +35,7 @@ export default function AppFooter() {
                         </div>
 
                         <Link className="" href="https://github.com/hjrsmail" target="_blank" rel="noopener noreferrer">
-                            <Button className="mt-1 w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
+                            <Button className=" w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
                                 <p className="text-xs sm:text-sm" >https://github.com/hjrsmail</p>
                                 <ArrowUpRightFromSquareIcon />
                             </Button>
@@ -57,7 +57,7 @@ export default function AppFooter() {
                         </div>
 
                         <Link href="https://www.linkedin.com/in/hijir-ismail" target="_blank" rel="noopener noreferrer">
-                            <Button className="mt-1 w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
+                            <Button className="w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
                                 <p className="text-xs sm:text-sm" >https://www.linkedin.com/in/h...</p>
                                 <ArrowUpRightFromSquareIcon />
                             </Button>
@@ -79,7 +79,7 @@ export default function AppFooter() {
                         </div>
 
                         <Link href="mailto:hijir512@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <Button className="mt-1 w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
+                            <Button className="w-full justify-between bg-white dark:bg-gray-800 text-black dark:text-gray-300 ">
                                 <p className="text-xs sm:text-sm" >mailto:hijir512@gmail.com</p>
                                 <ArrowUpRightFromSquareIcon />
                             </Button>
