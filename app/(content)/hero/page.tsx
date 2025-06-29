@@ -4,10 +4,12 @@ import React from 'react'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
-import MyPicture from '@/public/images/pict.jpg'
-import CodePictures from '@/public/images/code.png'
+import MyPicture from '@/public/images/pict.webp'
+import CodePictures from '@/public/images/code.webp'
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import { AnimatedSpan, Terminal, TypingAnimation } from "@/components/magicui/terminal";
+import GradientText from '@/src/blocks/TextAnimations/GradientText/GradientText';
+import SplashCursor from '@/src/blocks/Animations/SplashCursor/SplashCursor';
 import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 export default function Hero() {
@@ -55,7 +57,9 @@ export default function Hero() {
             id="home"
             className="duration-300 relative flex flex-col-reverse items-center px-4 py-10 sm:px-6 md:grid md:h-[1150px] 3xl:h-fit md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:px-2 lg:py-12">
             <SmoothCursor />
-            
+            <SplashCursor />
+
+
             {/* Text */}
             <div
                 className="duration-000 flex max-w-4xl flex-col items-center pt-20 transition-all ease-out md:ml-6 md:items-start md:pt-0 lg:col-span-2">
@@ -77,9 +81,14 @@ export default function Hero() {
 
                 <div className="flst inline-items mt-3 flex  items-center gap-3 text-base text-pretty text-gray-700 sm:text-2xl/relaxed md:gap-5 dark:text-gray-200">
                     <CodeBracketIcon className='size-5 text-blue-500 hover:text-white md:size-8' />
-                    <p className="text-lg md:text-xl  from-blue-400 to-purple-500 bg-clip-text text-black duration-100 hover:bg-gradient-to-r hover:text-transparent dark:text-gray-300">
+                    <GradientText
+                        colors={["oklch(70.7% 0.165 254.624)", "oklch(62.7% 0.265 303.9)"]}
+                        animationSpeed={3}
+                        showBorder={false}
+                        className="custom-class"
+                    >
                         Fullstack Developer
-                    </p>
+                    </GradientText>
                 </div>
 
                 {/* Deskripsi */}
@@ -138,11 +147,24 @@ export default function Hero() {
                 </div>
             </div>
 
+
             {/* Gambar */}
             <div
                 id="myPict"
-                className="flex mx-auto scale-110 justify-center pt-20 transition-all duration-500 ease-out md:items-center md:pt-1"
+                className="flex mx-auto  justify-center pt-20 transition-all duration-500 ease-out md:items-center md:pt-1"
             >
+
+                {/* <ProfileCard
+                    name="Javi A. Torres"
+                    title="Software Engineer"
+                    handle="javicodes"
+                    status="Online"
+                    contactText="Contact Me"
+                    avatarUrl="/images/pict.webp"
+                    showUserInfo={false}
+                    enableTilt={true}
+                    onContactClick={() => console.log('Contact clicked')}
+                /> */}
                 <Image priority={true}
                     src={MyPicture}
                     placeholder="empty"
