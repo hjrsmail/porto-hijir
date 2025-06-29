@@ -7,14 +7,12 @@ interface CertificateCardProps {
 
 export default function CertificateCard({ picture }: CertificateCardProps) {
     return (
-        <div className="rounded-lg overflow-hidden border border-gray-900 bg-transparent shadow-sm">
-            <div className="relative">
-                <Image
-                    src={picture}
-                    className="transition-all duration-300 ease-in-out hover:scale-103 brightness-70 hover:brightness-100"
-                    alt="mysertif"
-                />
-            </div>
-        </div>
+        <Image
+            src={picture}
+            width={400}
+            height={400}
+            className="transition-all duration-300 ease-in-out hover:scale-103 brightness-70 hover:brightness-100 rounded-2xl"
+            alt="mysertif"
+        />
     );
 }
