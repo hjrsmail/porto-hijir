@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 import React from "react";
-import Image_1 from "@/public/images/sertif1.png";
-import Image_2 from "@/public/images/sertif2.png";
-import Image_3 from "@/public/images/sertif3.png";
+import Image_1 from "@/public/images/sertif1.webp";
+import Image_2 from "@/public/images/sertif2.webp";
+import Image_3 from "@/public/images/sertif3.webp";
+import Image_4 from "@/public/images/sertif4.webp";
+import Image_5 from "@/public/images/sertif5.webp";
+import Image_6 from "@/public/images/sertif6.webp";
+import Image_7 from "@/public/images/sertif7.webp";
+import Image_8 from "@/public/images/sertif8.webp";
+import Image_9 from "@/public/images/sertif9.webp";
 import SkillsGridOne from "@/components/layouts/partials/skills-one-layout";
 import SkillsGridTwo from "@/components/layouts/partials/skills-two-layout";
 import CertificateCard from "@/components/ui/certificate-card";
@@ -12,10 +18,23 @@ import { cn } from "@/lib/utils";
 
 
 export default function Skills() {
+
+    const certificateData = [
+        { picture: Image_1 },
+        { picture: Image_2 },
+        { picture: Image_3 },
+        { picture: Image_4 },
+        { picture: Image_5 },
+        { picture: Image_6 },
+        { picture: Image_7 },
+        { picture: Image_8 },
+        { picture: Image_9 },
+    ];
+
     type Tab = 'pageOne' | 'pageTwo' | 'pageThree';
     const [activeTab, setActiveTab] = useState<Tab>('pageOne');
     return (
-        <section id="skills" className="relative bg-transparent px-4 py-10 sm:px-6 sm:py-12 lg:py-8 lg:mb-10 lg:px-2 lg:h-[700px]">
+        <section id="skills" className="relative bg-transparent px-4 py-10 sm:px-6 sm:py-12 lg:py-8 lg:mb-10 lg:px-8 lg:min-h-[700px]">
             {/* <div className="absolute w-60 h-60 top-18 bg-purple-950 dark:bg-orange-600 opacity-10 blur-xl rounded-full z-0" /> */}
             {/* Background Pattern */}
             {/* <DotPattern
@@ -67,10 +86,10 @@ export default function Skills() {
 
 
                 {activeTab === 'pageThree' && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:pt-2 text-dark">
-                        <CertificateCard picture={Image_1} />
-                        <CertificateCard picture={Image_2} />
-                        <CertificateCard picture={Image_3} />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-y-5 justify-items-center items-center md:pt-2 text-dark">
+                        {certificateData.map((item, index) => (
+                            <CertificateCard key={index} picture={item.picture} />
+                        ))}
                     </div>
                 )}
             </div>
