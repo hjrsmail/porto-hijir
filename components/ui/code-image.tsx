@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import codeDark from '@/public/images/code.png';
-import codeLight from '@/public/images/code_light.png';
+import codeDark from '@/public/images/code.webp';
+import codeLight from '@/public/images/code_light.webp';
 import { useEffect, useState } from 'react';
 
 export default function CodeImage() {

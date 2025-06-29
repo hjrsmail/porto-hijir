@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
-import MyPicture from '@/public/images/pict.jpg'
+import MyPicture from '@/public/images/pict.webp'
 import ButtonLink from '@/components/ui/button-link'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
