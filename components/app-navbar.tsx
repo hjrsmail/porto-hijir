@@ -47,7 +47,7 @@ export default function AppNavbar() {
                             ))}
 
                             {/* Dropdown */}
-                            <div
+                            {/* <div
                                 className="relative text-md font-medium"
                                 onMouseEnter={() => setDropdownOpen(true)}
                                 onMouseLeave={() => setDropdownOpen(false)}
@@ -62,7 +62,7 @@ export default function AppNavbar() {
                                         <Link href="/other/mission" className="block px-4 py-2 text-gray-700 hover:bg-yellow-500">Mission</Link>
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

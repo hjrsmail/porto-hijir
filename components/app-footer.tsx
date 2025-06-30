@@ -22,7 +22,7 @@ export default function AppFooter() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16 w-full px-8 py-4 mx-auto space-y-2 sm:py-8 max-w-7xl sm:px-5">
                 <div className="card-github">
-                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30">
+                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30 hover:scale-103 duration-300 transition-all">
                         <div className="bg-gray-800 h-[144px] md:h-[150px] items-center justify-center flex rounded-md">
                             <GithubIcon className="w-20" />
                         </div>
@@ -44,7 +44,7 @@ export default function AppFooter() {
                     </Card>
                 </div>
                 <div className="card-linkedin">
-                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30">
+                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30 hover:scale-103 duration-300 transition-all">
                         <div className="bg-blue-600/50 h-[144px] md:h-[150px] items-center justify-center flex rounded-md">
                             <LinkedIcon className="w-20" />
                         </div>
@@ -66,7 +66,7 @@ export default function AppFooter() {
                     </Card>
                 </div>
                 <div className="card-email">
-                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30">
+                    <Card className=" min-h-[342px] min-w-[300px] mx-auto bg-darkk/30 hover:scale-103 duration-300 transition-all">
                         <div className="bg-red-600/50 h-[144px] md:h-[150px] items-center justify-center flex rounded-md">
                             <MailIcon className="w-20" />
                         </div>
@@ -92,7 +92,7 @@ export default function AppFooter() {
 
 
             <div className="border-t border-gray-100 pt-6 mt-2 md:mt-10 flex flex-row gap-5 sm:items-center justify-between dark:border-gray-800 py-8 px-5">
-                <p className=" text-xs sm:text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                <p className=" text-xs sm:text-sm text-gray-500 dark:text-gray-400 pointer-events-none">
                     Copyright 2025 &copy; Hijir Ismail.
                 </p>
 
