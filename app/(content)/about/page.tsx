@@ -35,24 +35,19 @@ export default function About() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="description my-4 flex rounded-r-4xl md:col-span-3">
-                        <div className="mx-auto w-auto max-w-7xl gap-6 text-justify brightness-80">
-                            <div className="text-description flex flex-col gap-6">
+                    <div className="description my-7 lg:my-4 flex rounded-r-4xl md:col-span-3">
+                        <div className="mx-auto w-auto max-w-7xl gap-6 text-justify dark:text-gray-400">
+                            <div className="text-description text-sm md:text-base flex flex-col gap-6 mb-2 md:mb-0 ">
                                 <div className="t-top duration-200 dark:hover:text-white">
                                     Saya merupakan fresh graduate dari Universitas Negeri Makassar pada Jurusan Teknik
-                                    Informatika dan Komputer dengan IPK 3,95 dan masa studi 3 tahun 4 bulan. Saat ini
-                                    saya mampu mengembangkan sistem informasi berbasis web serta dapat mengerjakan
+                                    Informatika dan Komputer dengan IPK 3,95 dan masa studi 3 tahun 4 bulan. Saat ini,
+                                    mampu mengembangkan sistem informasi berbasis web serta dapat mengerjakan
                                     administrasi perkantoran seperti pengarsipan dan penginputan data. Saya juga
                                     aktif belajar teknologi baru dan senang menyelesaikan tantangan teknis secara
                                     sistematis.
                                 </div>
                                 <div className="t-bot duration-100 dark:hover:text-white">
-                                    Selain itu, saya memiliki pengetahuan dasar maintenance software/hardware pada laptop/PC. Saya dapat bekerja secara mandiri maupun dalam tim, mengutamakan
-                                    kedisiplinan, dan terbiasa bekerja dengan tenggat waktu yang jelas. Saya
-                                    juga memiliki kemampuan komunikasi yang baik, mudah beradaptasi di lingkungan
-                                    baru, dan selalu berinisiatif dalam menyelesaikan pekerjaan. Dengan latar belakang
-                                    pendidikan dan keterampilan yang saya miliki, saya siap untuk terus berkembang dan
-                                    berkontribusi dalam berbagai proyek dan tantangan baru.
+                                    Selain itu, memiliki pengetahuan dasar dalam maintenance software dan hardware pada laptop/PC. Terbiasa bekerja mandiri maupun dalam tim, menjunjung tinggi kedisiplinan, dan mampu menyelesaikan tugas tepat waktu. Komunikatif, adaptif, serta inisiatif dalam menyelesaikan pekerjaan. Siap berkembang dan berkontribusi dalam berbagai proyek dan tantangan baru.
                                 </div>
                             </div>
 
@@ -64,15 +59,15 @@ export default function About() {
                                 <div className="mx-auto grid w-auto grid-cols-3 items-center justify-center gap-3 p-3 md:p-6">
                                     {[
                                         { title: '1+', desc: 'Years of Experience' },
-                                        { title: '3', desc: 'Project Created' },
-                                        { title: '5+', desc: 'Certificate' },
+                                        { title: '5', desc: 'Project Created' },
+                                        { title: '8+', desc: 'Certificate' },
                                     ].map((item, index) => (
                                         <div
                                             key={index}
                                             className="flex h-full w-full flex-col items-center justify-center rounded-2xl border border-gray-800 p-2 md:p-6"
                                         >
-                                            <div className="text-sm sm:text-2xl md:mb-1">{item.title}</div>
-                                            <p className="text-center text-xs sm:text-lg">{item.desc}</p>
+                                            <div className="text-sm md:text-xl lg:text-2xl md:mb-1">{item.title}</div>
+                                            <p className="text-center text-xs md:text-lg">{item.desc}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -125,7 +120,7 @@ export default function About() {
                                                 <span className="absolute -left-1.5 h-3 w-3 rounded-full bg-blue-500"></span>
                                                 <div className="ml-3 text-sm custom-mini:text-xs font-black sm:text-lg">Freelance Programmer</div>
                                                 <p className="ml-3 text-sm custom-mini:text-xs">2024 - present</p>
-                                                <p className="ml-3 text-sm custom-mini:text-xs">Remote Projects</p>
+                                                <p className="ml-3 text-sm custom-mini:text-xs">Remote Projects @GercepTechnology</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -136,18 +131,18 @@ export default function About() {
                             <div className="flex flex-row justify-center gap-4 p-4 lg:justify-start">
                                 <div className="cv-downloader">
                                     <ButtonLink href="/pdf/cv-new.pdf"
-                                        className="hover:!bg-gray-800 duration-400 hover:text-gray-400 bg-pink-300 dark:bg-blue-500 "
+                                        className=" dark:text-gray-300 hover:!bg-gray-800 duration-400 hover:text-gray-400 bg-pink-300 dark:bg-blue-500 "
                                         icon={<ArrowDownTrayIcon />}
                                     >
-                                        <p className="md:text-md text-sm">Download CV</p>
+                                        <p className=" text-xs md:text-md ">Download CV</p>
                                     </ButtonLink>
                                 </div>
                                 <div className="project-link">
                                     <ButtonLink href="{{ url('portofolio') }}"
-                                        className='text-blue-500 hover:bg-gray-800 duration-400 hover:text-gray-400'
+                                        className='text-blue-500 hover:bg-blue-500 duration-400 hover:text-gray-200'
                                         icon={<ArrowTopRightOnSquareIcon />}
                                     >
-                                        <p className="md:text-md text-sm">See Portfolio</p>
+                                        <p className="md:text-md text-xs">See Portfolio</p>
                                     </ButtonLink>
                                 </div>
                             </div>
