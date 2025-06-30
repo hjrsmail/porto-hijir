@@ -10,7 +10,7 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project }) => {
     return (
-        <article className="flex flex-col space-y-3 z-10">
+        <article className="flex flex-col space-y-2 md:space-y-3 z-10">
             <div className="transition-all duration-300 ease-in-out hover:scale-105">
                 <Image
                     // priority={true}
@@ -19,11 +19,11 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     alt={project.title}
                     width={500}
                     height={300}
-                    className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 brightness-70 hover:brightness-100"
+                    className="object-cover w-full mb-1 md:mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 brightness-70 hover:brightness-100"
                 />
             </div>
 
-            <h2 className="text-lg font-bold sm:text-lg md:text-xl bg-darkk/50 rounded-md py-1">
+            <h2 className="text-sm font-bold sm:text-lg md:text-xl bg-darkk/50 rounded-md pt-1">
                 {project.title}
             </h2>
 

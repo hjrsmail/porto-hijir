@@ -29,7 +29,7 @@ const skills: Skill[] = [
 
 const SkillsGridOne: React.FC = () => {
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:pt-2">
+        <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:pt-2">
             {skills.map(({ label, icon }) => (
                 <SkillCard key={label} label={label} icon={icon} />
             ))}
