@@ -4,6 +4,7 @@ import About from "./(content)/about/page";
 import Skills from "./(content)/skills/page";
 import Project from "./(content)/project/page";
 import type { Metadata } from "next";
+import SplashWrapper from "@/components/ui/splash-wrapper";
 import AppLayout from "@/components/layouts/app-layout";
 
 export const metadata: Metadata = {
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <AppLayout>
-      <Hero />
-      <About />
-      <Skills />
-      <Project />
-    </AppLayout>
+    <SplashWrapper>
+      <AppLayout>
+        <Hero />
+        <About />
+        <Skills />
+        <Project />
+      </AppLayout>
+    </SplashWrapper>
   )
 }

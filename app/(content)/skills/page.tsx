@@ -56,19 +56,19 @@ export default function Skills() {
                 <div className="pb-6 flex justify-center py-6 md:gap-10">
                     <button
                         onClick={() => setActiveTab('pageOne')}
-                        className={`px-4 py-2 text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageOne' ? 'text-orange-500' : 'hover:text-orange-500'
+                        className={`px-4 py-2 text-sm md:text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageOne' ? 'text-orange-500' : 'hover:text-orange-500'
                             }`}>
                         Tech Stack
                     </button>
                     <button
                         onClick={() => setActiveTab('pageTwo')}
-                        className={`px-4 py-2 text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageTwo' ? 'text-pink-500' : 'hover:text-pink-500'
+                        className={`px-4 py-2 text-sm md:text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageTwo' ? 'text-pink-500' : 'hover:text-pink-500'
                             }`}>
                         Tools
                     </button>
                     <button
                         onClick={() => setActiveTab('pageThree')}
-                        className={`px-4 py-2 text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageThree' ? 'text-purple-500' : 'hover:text-purple-500'
+                        className={`px-4 py-2 text-sm md:text-md md:text-xl rounded hover:scale-110 duration-500 ${activeTab === 'pageThree' ? 'text-purple-500' : 'hover:text-purple-500'
                             }`}
                     >
                         Certificate
