@@ -29,7 +29,7 @@ export default function About() {
 
     return (
         <section id="about" className="relative bg-transparent px-4 py-10 sm:px-6 sm:py-1 lg:px-2 lg:pb-16">
-            
+
             {/* <Meteors number={10} /> */}
             {/* Title */}
             <div className="flex flex-col items-center justify-center py-6 text-center">
@@ -73,10 +73,10 @@ export default function About() {
                     <div className="description my-7 lg:my-4 flex rounded-r-4xl md:col-span-4">
                         <div className="mx-auto w-auto max-w-7xl gap-6 text-justify dark:text-gray-400">
                             <div className="text-description text-sm md:text-base flex flex-col gap-6 mb-2 md:mb-0 ">
-                                <div className="t-top duration-200 dark:hover:text-white">
-                                    <ScrollRevealSimple className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                                        I am a fresh graduate from Universitas Negeri Makassar, majoring in Informatics and Computer Engineering, with a GPA of 3.95 and a study period of 3 years and 4 months. I am proficient in developing web-based information systems and experienced in office administration tasks such as archiving and data entry. I am also an active learner of new technologies and enjoy solving technical challenges in a systematic manner.
-                                    </ScrollRevealSimple>
+                                <div className="t-top duration-200 dark:hover:text-white transition-colors">
+                                    {/* <ScrollRevealSimple className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed"> */}
+                                    I am a fresh graduate from Universitas Negeri Makassar, majoring in Informatics and Computer Engineering, with a GPA of 3.95 and a study period of 3 years and 4 months. I am proficient in developing web-based information systems and experienced in office administration tasks such as archiving and data entry. I am also an active learner of new technologies and enjoy solving technical challenges in a systematic manner.
+                                    {/* </ScrollRevealSimple> */}
                                 </div>
                                 <div className="t-bot duration-100 dark:hover:text-white">
                                     Additionally, I possess basic knowledge in software and hardware maintenance for laptops and PCs. I am accustomed to working both independently and in a team, upholding discipline, and completing tasks on time. I am communicative, adaptable, and take initiative in accomplishing tasks. I am ready to grow and contribute to various projects and new challenges.
@@ -157,7 +157,7 @@ export default function About() {
                                                 <span className="absolute -left-1.5 h-3 w-3 rounded-full bg-blue-500"></span>
                                                 <div className="ml-3 text-sm custom-mini:text-xs font-black sm:text-lg">Freelance Programmer</div>
                                                 <p className="ml-3 text-sm custom-mini:text-xs">2024 - present</p>
-                                                <p className="ml-3 text-sm custom-mini:text-xs">Remote Projects @GercepTechnology</p>
+                                                <p className="ml-3 text-sm custom-mini:text-xs break-words">Remote Projects @GercepTechnology</p>
                                             </li>
                                         </ul>
                                     </div>
