@@ -1,4 +1,3 @@
-// components/ui/SplashScreen.tsx
 "use client";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
