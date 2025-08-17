@@ -12,7 +12,7 @@ export const useActiveSection = (sectionIds: string[]) => {
                     }
                 });
             },
-            { threshold: 0.5 } // Bisa kamu ubah sesuai kebutuhan
+            { threshold: 0.5 } 
         );
 
         sectionIds.forEach(id => {

@@ -4,6 +4,8 @@ import MySQLIcon from '@/components/icons/mysql-icon';
 import GITIcon from '@/components/icons/git-icon';
 import GithubIcon from '@/components/icons/github-icon';
 import NPMIcon from '@/components/icons/npm-icon';
+import PostgreeIcon from '@/components/icons/postgree-icon';
+import PostmanIcon from '@/components/icons/postman-icon';
 
 interface Skill {
     label: string;
@@ -12,6 +14,8 @@ interface Skill {
 
 const skills: Skill[] = [
     { label: 'MySQL', icon: <MySQLIcon /> },
+    { label: 'PostgreSQL', icon: <PostgreeIcon /> },
+    { label: 'Postman' , icon: <PostmanIcon /> },
     { label: 'GIT', icon: <GITIcon /> },
     { label: 'Github', icon: <GithubIcon /> },
     { label: 'NPM', icon: <NPMIcon /> },

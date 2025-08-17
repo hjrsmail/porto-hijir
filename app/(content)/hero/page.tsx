@@ -11,12 +11,19 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "@/components/magicui/te
 import GradientText from "@/src/blocks/TextAnimations/GradientText/GradientText";
 import SplashCursor from "@/src/blocks/Animations/SplashCursor/SplashCursor";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import ProfileCard from "@/src/blocks/Components/ProfileCard/ProfileCard";
+import Aurora from '@/src/blocks/Backgrounds/Aurora/Aurora';
+import HeroButtons from "@/components/ui/hero-buttons";
+import { useActiveSection } from "@/hooks/use-active-session";
+import Orb from '@/src/blocks/Backgrounds/Orb/Orb';
 
 export default function Hero() {
     const nameRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const terminalRef = useRef<HTMLDivElement>(null);
+    const profileRef = useRef<HTMLDivElement>(null);
+    const activeId = useActiveSection(["project", "contact"]);
 
     const splitTextIntoSpans = (element: HTMLElement) => {
         const text = element.textContent || "";
@@ -80,6 +87,16 @@ export default function Hero() {
             );
         }
 
+        // Profile IMG Card
+        if (profileRef.current) {
+            tl.fromTo(
+                profileRef.current,
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+                "-=0.6"
+            );
+        }
+
         return () => {
             el.innerHTML = originalText;
         };
@@ -90,6 +107,16 @@ export default function Hero() {
             id="home"
             className="duration-300 relative flex flex-col-reverse items-center px-4 py-10 sm:px-6 md:grid md:h-[1150px] md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:px-2 lg:py-12"
         >
+
+
+            {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] z-0">
+                <Orb
+                    hoverIntensity={0.5}
+                    rotateOnHover={true}
+                    hue={0}
+                    forceHoverState={false}
+                />
+            </div> */}
             <SmoothCursor />
             <SplashCursor />
 
@@ -110,8 +137,10 @@ export default function Hero() {
                         alt="code"
                         placeholder="empty"
                         priority
-                        className="rotate-x-10 w-100 -rotate-y-15 rotate-z-10 rounded-lg duration-500 hover:-translate-x-10 hover:translate-y-10 hover:translate-z-10 hover:rotate-x-0 hover:rotate-y-0 hover:rotate-z-0"
+                        className="rotate-x-10 w-100 z-10 -rotate-y-15 rotate-z-10 rounded-lg duration-500 hover:-translate-x-10 hover:translate-y-10 hover:translate-z-10 hover:rotate-x-0 hover:rotate-y-0 hover:rotate-z-0"
                     />
+
+
                 </div>
 
                 <div className="mt-3 flex items-center gap-3 text-base sm:text-2xl dark:text-gray-200">
@@ -126,24 +155,10 @@ export default function Hero() {
                 </div>
 
                 <p className="mt-4 text-justify text-sm md:text-lg dark:text-gray-400">
-                    Saya adalah seorang web developer dengan minat di bidang frontend & backend, serta pengalaman membangun aplikasi berbasis Laravel, Tailwind CSS, Bootstrap. Saat ini saya sedang memperdalam React + TypeScript dan Next.js.
+                    I am a web developer with an interest in both frontend and backend development, and experience in building applications using Laravel, Tailwind CSS, and Bootstrap. I am currently expanding my expertise in React with TypeScript and Next.js.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-4 text-sm md:text-md sm:flex-row text-center">
-                    <a
-                        href="/portofolio"
-                        className="group relative inline-block rounded border border-gray-800 bg-blue-500 p-2 md:px-5 md:py-4 font-medium text-black shadow-sm transition-all duration-300 hover:scale-105 dark:text-gray-300"
-                    >
-                        <span className="block transition duration-300 group-hover:opacity-0">Lihat Karya Saya &mdash;&raquo;</span>
-                    </a>
-
-                    <a
-                        href="/contact"
-                        className="group relative inline-block rounded border border-gray-800 p-2 md:px-5 md:py-4 font-medium text-black shadow-sm transition-all duration-300 hover:scale-105 dark:text-gray-300"
-                    >
-                        Hubungi Saya
-                    </a>
-                </div>
+                <HeroButtons />
 
                 {/* TERMINAL */}
                 <div ref={terminalRef} className="hidden md:block md:w-full mt-7 pr-5">
@@ -167,18 +182,12 @@ export default function Hero() {
             </div>
 
             {/* IMAGE */}
-            <div
-                ref={imageRef}
-                className="flex mx-auto justify-center pt-20 md:items-center md:pt-1"
-            >
-                <Image
-                    priority
-                    src={MyPicture}
-                    placeholder="empty"
-                    alt="myphoto"
-                    className="rounded-full brightness-80 duration-400 hover:brightness-100 w-50 md:w-80"
+            <div ref={profileRef} className="mt-20 md:mt-0">
+                <ProfileCard
+                    avatarUrl="/images/pict.webp"
                 />
             </div>
+
         </div>
     );
 }

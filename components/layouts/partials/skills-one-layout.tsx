@@ -9,6 +9,9 @@ import TailwindIcon from "@/components/icons/tailwind-icon";
 import LaravelIcon from "@/components/icons/laravel-icon";
 import NodeJSIcon from "@/components/icons/nodejs-icon";
 import AlpineJSIcon from "@/components/icons/alpine-icon";
+import NextJSIcon from '@/components/icons/nextjs-icon';
+import ReactIcon from '@/components/icons/react-icon';
+import TSIcon from '@/components/icons/ts-icon';
 
 interface Skill {
     label: string;
@@ -20,11 +23,14 @@ const skills: Skill[] = [
     { label: 'CSS', icon: <CSSIcon /> },
     { label: 'JavaScript', icon: <JSIcon /> },
     { label: 'PHP', icon: <PHPIcon /> },
-    { label: 'Bootstrap', icon: <BootstrapIcon /> },
-    { label: 'Tailwind CSS', icon: <TailwindIcon /> },
     { label: 'Laravel', icon: <LaravelIcon /> },
-    { label: 'NodeJS', icon: <NodeJSIcon /> },
-    { label: 'AlpineJS', icon: <AlpineJSIcon /> },
+    { label: 'NextJS', icon: <NextJSIcon /> },
+    { label: 'ReactJS', icon: <ReactIcon /> },
+    { label: 'TypeScript', icon: <TSIcon /> },
+    { label: 'Tailwind CSS', icon: <TailwindIcon /> },
+    { label: 'Bootstrap', icon: <BootstrapIcon /> },
+    // { label: 'NodeJS', icon: <NodeJSIcon /> },
+    // { label: 'AlpineJS', icon: <AlpineJSIcon /> },
 ];
 
 const SkillsGridOne: React.FC = () => {
