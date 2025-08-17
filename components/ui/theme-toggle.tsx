@@ -37,7 +37,7 @@ const ThemeToggle: React.FC = () => {
     if (darkMode === null) {
         return (
             <button
-                className="z-50 p-2 bg-gray-300 text-gray-800 rounded opacity-50 cursor-not-allowed"
+                className="z-50 p-1 text-gray-800 rounded opacity-50 cursor-not-allowed border-1 border-gray-800"
                 disabled
                 aria-label="Loading theme toggle"
             >
@@ -49,7 +49,7 @@ const ThemeToggle: React.FC = () => {
     return (
         <button
             onClick={toggleDarkMode}
-            className="z-50 p-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-100 rounded"
+            className="z-50 p-1 px-3 text-gray-800 dark:text-gray-100 rounded-md border-1 border-gray-950 dark:border-gray-100/30 hover:bg-darkk dark:hover:bg-gray-800"
             aria-label="Toggle dark mode"
         >
             {darkMode ? '🌙' : '☀️'}
