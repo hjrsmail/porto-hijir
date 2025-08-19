@@ -143,7 +143,7 @@ export default function Hero() {
 
                 </div>
 
-                <div className="mt-3 flex items-center gap-3 text-base sm:text-2xl dark:text-gray-200 hidden md:block ">
+                <div className="mt-3 items-center gap-3 text-base sm:text-2xl dark:text-gray-200 hidden md:flex ">
                     <CodeBracketIcon className="size-5 text-blue-500 md:size-8" />
                     <GradientText
                         colors={["oklch(70.7% 0.165 254.624)", "oklch(62.7% 0.265 303.9)"]}
