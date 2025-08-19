@@ -3,72 +3,92 @@ import Image from "next/image";
 import GithubWhiteIcon from "../icons/github-white-icon";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { Project } from "@/types";
+import Link from "next/link";
 
-interface Props {
+const ProjectCard = ({
+    project,
+    onClick,
+}: {
     project: Project;
     onClick: () => void;
-}
+}) => {
+    // Format tanggal (hanya tanggal, tanpa jam)
+    const formattedDate = new Date(project.created_at).toLocaleDateString(
+        "id-ID",
+        {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        }
+    );
 
-const ProjectCard: React.FC<Props> = ({ project, onClick }) => {
     return (
-        <article onClick={onClick} className="flex flex-col space-y-2 md:space-y-3 z-10 rounded-md shadow-xs shadow-gray-400 dark:shadow-blue-800/50 transition-all duration-300 ease-in-out hover:scale-105 brightness-70 hover:brightness-100 dark:brightness-100">
-            <div className="">
+        <article
+            onClick={onClick}
+            className="flex flex-col z-10 rounded-md shadow-xs shadow-gray-400 
+             dark:shadow-blue-800/50 transition-all duration-300 ease-in-out 
+             hover:scale-105 brightness-70 hover:brightness-100 dark:brightness-100"
+        >
+            <div>
                 <Image
-                    // priority={true}
                     loading="lazy"
                     src={project.image}
                     alt={project.title}
                     width={500}
                     height={300}
-                    className="object-cover w-full mb-1 md:mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 "
+                    className="object-cover w-full mb-1 md:mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
                 />
             </div>
 
-            <h2 className="text-sm font-bold sm:text-lg md:text-xl dark:bg-darkk/50 rounded-md py-2 px-4">
-                {project.title}
-            </h2>
+            {/* Bagian title */}
+            <div className="px-4">
+                <h2 className="text-sm font-bold sm:text-lg dark:bg-darkk/50 
+                   rounded-md py-2">
+                    {project.title}
+                </h2>
+            </div>
 
-            {/* Tampilkan deskripsi jika diperlukan */}
-            {/* <p className="text-sm text-gray-600 dark:text-gray-400">
-        {description.length > 80 ? description.slice(0, 80) + "..." : description}
-      </p> */}
+            {/* Bagian meta (author, tanggal, link) */}
+            <div className="mt-auto px-4 pb-4">
+                <p className="text-xs font-medium inline-flex flex-wrap items-center gap-1 
+                  text-gray-700 dark:text-gray-300">
+                    <span>{project.author}</span>
+                    <span>·</span>
+                    <span>{formattedDate}</span>
 
-            <p className="text-xs font-medium inline-flex flex-wrap items-center gap-1 text-gray-700 dark:text-gray-300 px-4 pb-4">
-                <span>{project.author}</span>
-                <span>·</span>
-                <span>{project.date}</span>
+                    {project.demo_url && (
+                        <>
+                            <span>·</span>
+                            <Link
+                                href={project.demo_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Project URL"
+                                className="inline-flex items-center"
+                            >
+                                <ArrowUpRightIcon className="w-5 h-5" />
+                            </Link>
+                        </>
+                    )}
 
-                {project.url && (
-                    <>
-                        <span>·</span>
-                        <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Project URL"
-                            className="inline-flex items-center"
-                        >
-                            <ArrowUpRightIcon className="w-5 h-5" />
-                        </a>
-                    </>
-                )}
-
-                {project.github && (
-                    <>
-                        <span>·</span>
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub Repository"
-                            className="inline-flex items-center"
-                        >
-                            <GithubWhiteIcon className="w-6 h-6 fill-gray-800 dark:fill-white" />
-                        </a>
-                    </>
-                )}
-            </p>
+                    {project.github_url && (
+                        <>
+                            <span>·</span>
+                            <Link
+                                href={project.github_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub Repository"
+                                className="inline-flex items-center"
+                            >
+                                <GithubWhiteIcon className="w-6 h-6 fill-gray-800 dark:fill-white" />
+                            </Link>
+                        </>
+                    )}
+                </p>
+            </div>
         </article>
+
     );
 };
 
