@@ -157,7 +157,7 @@ export default function About() {
                                                 <span className="absolute -left-1.5 h-3 w-3 rounded-full bg-blue-500"></span>
                                                 <div className="ml-3 text-sm custom-mini:text-xs font-black sm:text-lg">Freelance Programmer</div>
                                                 <p className="ml-3 text-sm custom-mini:text-xs">2024 - present</p>
-                                                <p className="ml-3 text-sm custom-mini:text-xs break-words">Remote Projects @GercepTechnology</p>
+                                                <p className="ml-3 text-sm custom-mini:text-xs break-words">Remote Projects @Gercep Technology</p>
                                             </li>
                                         </ul>
                                     </div>

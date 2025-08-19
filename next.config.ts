@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "hjrsmail.my.id",
         pathname: "/storage/**",
       },
+      {
+        protocol: "https",
+        hostname: "udipnldnuphxxwyurpfu.supabase.co", // ganti sesuai Supabase project kamu
+        pathname: "/storage/v1/object/**",
+      },
     ],
   },
   eslint: {

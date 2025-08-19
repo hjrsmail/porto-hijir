@@ -1,11 +1,11 @@
-import { Project } from "@/types";
+// import { Project } from "@/types";
 
-export async function getProjects(): Promise<Project[]> {
-  const res = await fetch("/api/projects"); 
-  const json = await res.json();
+// export async function getProjects(): Promise<Project[]> {
+//   const res = await fetch("/api/projects"); 
+//   const json = await res.json();
 
-  // console.table(json);
+//   // console.table(json);
 
-  if (!res.ok) throw new Error(json.message || "Gagal fetch project");
-  return json.data;
-}
+//   if (!res.ok) throw new Error(json.message || "Gagal fetch project");
+//   return json.data;
+// }

@@ -2,21 +2,6 @@
 
 import { useEffect, useState } from "react";
 import React from "react";
-import Image_1 from "@/public/images/sertif1.webp";
-import Image_2 from "@/public/images/sertif2.webp";
-import Image_3 from "@/public/images/sertif3.webp";
-import Image_4 from "@/public/images/sertif4.webp";
-import Image_5 from "@/public/images/sertif5.webp";
-import Image_6 from "@/public/images/sertif6.webp";
-import Image_7 from "@/public/images/sertif7.webp";
-import Image_8 from "@/public/images/sertif8.webp";
-import Image_9 from "@/public/images/sertif9.webp";
-import Image_10 from "@/public/images/sertif10.webp";
-import Image_11 from "@/public/images/sertif11.webp";
-import Image_12 from "@/public/images/sertif12.webp";
-import Image_13 from "@/public/images/sertif13.webp";
-import Image_14 from "@/public/images/sertif14.webp";
-import Image_15 from "@/public/images/sertif15.webp";
 import SkillsGridOne from "@/components/layouts/partials/skills-one-layout";
 import SkillsGridTwo from "@/components/layouts/partials/skills-two-layout";
 import CertificateCard from "@/components/ui/certificate-card";
@@ -26,47 +11,74 @@ import Image from "next/image";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { motion } from "framer-motion";
 import { ShinyButton } from "@/src/components/magicui/shiny-button";
+import supabase from "@/lib/db";
+import type { Certificate } from "@/types";
 
 type Tab = 'pageOne' | 'pageTwo' | 'pageThree';
 
 export default function Skills() {
-    const certificateData = [
-        { picture: Image_1 },
-        { picture: Image_2 },
-        { picture: Image_3 },
-        { picture: Image_4 },
-        { picture: Image_5 },
-        { picture: Image_6 },
-        { picture: Image_7 },
-        { picture: Image_8 },
-        { picture: Image_9 },
-        { picture: Image_10 },
-        { picture: Image_11 },
-        { picture: Image_12 },
-        { picture: Image_13 },
-        { picture: Image_14 },
-        { picture: Image_15 },
-
-
-    ];
 
     const BATCH_SIZE = 6;
-    const [displayedCertificates, setDisplayedCertificates] = useState(certificateData.slice(0, BATCH_SIZE));
-    const [hasMore, setHasMore] = useState(certificateData.length > BATCH_SIZE);
+
+    const [certificateData, setCertificateData] = useState<Certificate[]>([]);
+    const [displayedCertificates, setDisplayedCertificates] = useState<Certificate[]>([]);
+    const [hasMore, setHasMore] = useState(false);
+
     const [activeTab, setActiveTab] = useState<Tab>("pageOne");
-    const [selectedCertificate, setSelectedCertificate] = useState<{ picture: any } | null>(null);
+    const [selectedCertificate, setSelectedCertificate] = useState<{ image: string } | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = (certificate: { picture: any }) => {
+    // fetch data by Supabase API 
+    useEffect(() => {
+        const fetchCertificates = async () => {
+            const { data, error } = await supabase
+                .from("certificates")
+                .select("id, image, title, publisher")
+                .order("id", { ascending: true });
+
+            if (error) {
+                console.error("error: ", error);
+            } else if (data) {
+                setCertificateData(data);
+            }
+        };
+
+        fetchCertificates();
+    }, [supabase]);
+
+    // update displayedCertificates setiap kali certificateData berubah
+    useEffect(() => {
+        if (certificateData.length > 0) {
+            const initialBatch = certificateData.slice(0, BATCH_SIZE);
+            setDisplayedCertificates(initialBatch);
+            setHasMore(certificateData.length > BATCH_SIZE);
+        }
+    }, [certificateData]);
+
+    // open modal
+    const openModal = (certificate: { image: string }) => {
         setSelectedCertificate(certificate);
         setIsModalOpen(true);
     };
-
 
     // close modal
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedCertificate(null);
+    };
+
+    // load more certificates
+    const loadMore = () => {
+        const nextBatch = certificateData.slice(
+            displayedCertificates.length,
+            displayedCertificates.length + BATCH_SIZE
+        );
+
+        setDisplayedCertificates((prev) => [...prev, ...nextBatch]);
+
+        if (displayedCertificates.length + nextBatch.length >= certificateData.length) {
+            setHasMore(false);
+        }
     };
 
 
@@ -90,14 +102,6 @@ export default function Skills() {
     //     if (nextBatch.length === 0) return; // no more data
     //     setDisplayedCertificates(prev => [...prev, ...nextBatch]);
     // };
-
-    const loadMore = () => {
-        const nextBatch = certificateData.slice(displayedCertificates.length, displayedCertificates.length + BATCH_SIZE);
-        setDisplayedCertificates(prev => [...prev, ...nextBatch]);
-        if (displayedCertificates.length + nextBatch.length >= certificateData.length) {
-            setHasMore(false); // sudah habis
-        }
-    };
 
     //   if (activeTab !== "pageTwo") return null;
 
@@ -189,7 +193,7 @@ export default function Skills() {
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     className="w-full md:w-[48%] lg:w-[30%] flex justify-center"
                                 >
-                                    <CertificateCard picture={item.picture} onClick={() => openModal(item)} />
+                                    <CertificateCard image={item.image} title={item.title} publisher={item.publisher} onClick={() => openModal(item)} />
                                 </motion.div>
                             ))}
                         </InfiniteScroll>
@@ -216,7 +220,7 @@ export default function Skills() {
                 >
                     <div
                         className="bg-white dark:bg-gray-800 rounded-lg max-w-2xl mx-4 w-full overflow-hidden shadow-lg relative"
-                        onClick={(e) => e.stopPropagation()} // Supaya klik gambar gak nutup modal
+                        onClick={(e) => e.stopPropagation()} // supaya klik gambar gak nutup modal
                     >
                         <button
                             className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 text-xl"
@@ -225,7 +229,7 @@ export default function Skills() {
                             ✕
                         </button>
                         <Image
-                            src={selectedCertificate.picture.src}
+                            src={selectedCertificate.image}
                             width={1200}
                             height={800}
                             alt="Certificate"

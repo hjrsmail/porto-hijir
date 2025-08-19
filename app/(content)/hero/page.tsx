@@ -125,7 +125,7 @@ export default function Hero() {
                 ref={textRef}
                 className="flex max-w-4xl flex-col items-center pt-20 md:ml-6 md:items-start md:pt-0 lg:col-span-2"
             >
-                <h1 className="text-3xl text-gray-900 sm:text-5xl lg:text-6xl dark:text-gray-300">
+                <h1 className="hidden md:block text-3xl text-gray-900 sm:text-5xl lg:text-6xl dark:text-gray-300">
                     <strong ref={nameRef} className="invisible">
                         Hijir Ismail
                     </strong>
@@ -143,7 +143,7 @@ export default function Hero() {
 
                 </div>
 
-                <div className="mt-3 flex items-center gap-3 text-base sm:text-2xl dark:text-gray-200">
+                <div className="mt-3 flex items-center gap-3 text-base sm:text-2xl dark:text-gray-200 hidden md:block ">
                     <CodeBracketIcon className="size-5 text-blue-500 md:size-8" />
                     <GradientText
                         colors={["oklch(70.7% 0.165 254.624)", "oklch(62.7% 0.265 303.9)"]}
@@ -154,7 +154,7 @@ export default function Hero() {
                     </GradientText>
                 </div>
 
-                <p className="mt-4 text-justify text-sm md:text-lg dark:text-gray-400">
+                <p className="-mt-4 md:mt-4 text-justify text-sm md:text-lg dark:text-gray-400">
                     I am a web developer with an interest in both frontend and backend development, and experience in building applications using Laravel, Tailwind CSS, and Bootstrap. I am currently expanding my expertise in React with TypeScript and Next.js.
                 </p>
 
