@@ -33,7 +33,7 @@ export default function AppFooter() {
                     delay={300}
                     animateBy="words"
                     direction="top"
-                    className="text-md pt-1 md:text-lg font-light text-black dark:text-gray-400"
+                    className="text-md pt-1 text-sm md:text-lg font-light text-black dark:text-gray-400"
                 />
             </div>
 

@@ -19,6 +19,9 @@ import GITIcon from '../icons/git-icon';
 import GithubIcon from '../icons/github-icon';
 import NPMIcon from '../icons/npm-icon';
 import { IconCloud } from '@/src/components/magicui/icon-cloud';
+import PHPIcon from '../icons/php-icon';
+import SupabaseIcon from '../icons/supabase-icon';
+import ViteIcon from '../icons/vite-icon';
 
 const OrbitCircle = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -74,6 +77,7 @@ const OrbitCircle = () => {
                     <CSSIcon />
                     <JSIcon />
                     <TSIcon />
+                    <PHPIcon />
                 </OrbitingCircles>
 
                 {/* Inner Orbit */}
@@ -84,6 +88,8 @@ const OrbitCircle = () => {
                     <GITIcon />
                     <GithubIcon />
                     <NPMIcon />
+                    <SupabaseIcon />
+                    <ViteIcon />
                 </OrbitingCircles>
 
             </div>
